@@ -20,6 +20,9 @@ def create_app(config_name='default'):
     login_manager.init_app(app)
     migrate.init_app(app, db)
 
+    from app.main import main
+    app.register_blueprint(main)
+
     from app.auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
