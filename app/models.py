@@ -39,7 +39,7 @@ class Post(db.Model):
     title = db.Column(db.String(200), nullable=False)
     body = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     published = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
@@ -71,7 +71,7 @@ class ItineraryDay(db.Model):
     title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text)
     accommodation = db.Column(db.String(200))
-    itinerary_id = db.Column(db.Integer, nullable=False)
+    itinerary_id = db.Column(db.Integer, db.ForeignKey('itineraries.id'), nullable=False)
 
     def __repr__(self):
         return f'<Day {self.day_number}: {self.title}>'
