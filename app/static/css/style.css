@@ -1,0 +1,15 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.jumbotron {
+    background: linear-gradient(135deg, #1a6b3c, #2d9e6b);
+    color: white;
+}
+.jumbotron p {
+    color: rgba(255,255,255,0.85);
+}

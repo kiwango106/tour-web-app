@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<h2>Profile: {{ current_user.username }}</h2>
+<p>Email: {{ current_user.email }}</p>
+<p>Member since: {{ current_user.created_at.strftime('%B %d, %Y') }}</p>
+<hr>
+<!-- TASK (2nd year): Add edit profile form here -->
+<p class="text-muted">Edit profile — not yet implemented.</p>
+{% endblock %}

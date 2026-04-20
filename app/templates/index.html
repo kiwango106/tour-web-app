@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Home - Isamani Tours{% endblock %}
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded mb-4">
+    <h1>Welcome to Isamani Tours</h1>
+    <p class="lead">Explore Tanzania's greatest peaks — Kilimanjaro, Mount Meru, and beyond.</p>
+    <a href="{{ url_for('itinerary.create') }}" class="btn btn-primary">Build Your Itinerary</a>
+    <a href="{{ url_for('chatbot.index') }}" class="btn btn-outline-secondary ms-2">Chat With Us</a>
+</div>
+
+<h3>Recent Posts</h3>
+<div class="row">
+    {% for post in recent_posts %}
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.body[:100] }}...</p>
+                <a href="{{ url_for('blog.post_detail', id=post.id) }}" class="btn btn-sm btn-outline-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p class="text-muted">No posts yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Create Itinerary{% endblock %}
+{% block content %}
+<h2>Create New Itinerary</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.destination.label(class="form-label") }}
+        {{ form.destination(class="form-control", placeholder="e.g. Mount Kilimanjaro") }}
+    </div>
+    <div class="mb-3">
+        {{ form.duration_days.label(class="form-label") }}
+        {{ form.duration_days(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}

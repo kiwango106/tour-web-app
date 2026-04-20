@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Edit Day {{ day.day_number }}{% endblock %}
+{% block content %}
+<h2>Edit Day {{ day.day_number }}: {{ day.title }}</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.description.label(class="form-label") }}
+        {{ form.description(class="form-control", rows=5) }}
+    </div>
+    <div class="mb-3">
+        {{ form.accommodation.label(class="form-label") }}
+        {{ form.accommodation(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+    <a href="{{ url_for('itinerary.detail', id=itinerary.id) }}" class="btn btn-secondary ms-2">Cancel</a>
+</form>
+{% endblock %}
